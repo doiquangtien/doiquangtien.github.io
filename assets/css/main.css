@@ -1401,3 +1401,7 @@ i.home-product-item__action-like-icon-fill{
     font-size: 1.6rem;
     color: var(--white-color);
 }
+
+.green{
+    color : var(--primary-color)
+}

@@ -482,7 +482,7 @@
                                     <a class="home-product-item js-a" href="#">
                                         <div class="home-product-item__img" style ="background-image: url(./assets/img/product.jpg);"></div>
                                         <h3 class="home-product-item__name-game">Grand Theft Auto V</h3>
-                                        <h4 class="home-product-item__name">Game lấy bối cảnh hư cấu ở bang San Andreas (dựa vào miền Nam California)</h4>
+                                        <h4 class="home-product-item__name js-product-name">Game lấy bối cảnh hư cấu ở bang San Andreas (dựa vào miền Nam California)</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">500.000đ</span>
                                             <span class="home-product-item__price-current">400.000đ</span>
@@ -521,7 +521,7 @@
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style ="background-image: url(./assets/img/home-product/pubg.jpg);"></div>
                                         <h3 class="home-product-item__name-game">PlayerUnknown's Battlegrounds</h3>
-                                        <h4 class="home-product-item__name">Là một trò chơi điện tử hành động, sinh tồn, nhiều người chơi trực tuyến </h4>
+                                        <h4 class="home-product-item__name js-product-name">Là một trò chơi điện tử hành động, sinh tồn, nhiều người chơi trực tuyến </h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">399.000đ</span>
                                             <span class="home-product-item__price-current">299.000đ</span>
@@ -1108,12 +1108,17 @@
     <script>
         const likes = document.querySelectorAll('.js-like')
         const actionlikes = document.querySelectorAll('.js-action-like')
-        const nolikes =document.querySelectorAll('.js-no-like')          
+        const nolikes =document.querySelectorAll('.js-no-like')
+        const colorproducts = document.querySelectorAll('.js-product-name')         
 
         // const nodeList_likes = Array.from(document.querySelectorAll('.js-like'))
         // const nodeList_nolikes = Array.from(document.querySelectorAll('.js-no-like'))
         // const nodeList_actionslike = Array.from(document.querySelectorAll('.js-action-like'))
         
+        for(const colorproduct of colorproducts)
+        setInterval(()=>{
+            colorproduct.classList.toggle('green')
+        },1000)
 
         likes.forEach(function(btn,i){likes
             btn.addEventListener('click',function(e){
