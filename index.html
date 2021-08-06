@@ -22,7 +22,7 @@
 <body>
     
     <div class="main">      
-        <header class="header ">
+        <header class="header js-header">
             <div class="grid wide">         
                 <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
@@ -383,7 +383,7 @@
                     <div class="col l-2 m-0 c-0">
                         <nav class="category">                
                             <h3 class="category__heading">
-                                <i class="category__heading-icon fas fa-gamepad"></i>
+                                <i class="category__heading-icon js-icon fas fa-gamepad"></i>
                                 DANH MỤC GAME</h3>
                             <ul class="category-list">
                                 <li class="category-item ">
@@ -1109,16 +1109,24 @@
         const likes = document.querySelectorAll('.js-like')
         const actionlikes = document.querySelectorAll('.js-action-like')
         const nolikes =document.querySelectorAll('.js-no-like')
-        const colorproducts = document.querySelectorAll('.js-product-name')         
-
+        const colorproducts = document.querySelectorAll('.js-product-name')      
+        
+        const icon = document.querySelector('.js-icon')
         // const nodeList_likes = Array.from(document.querySelectorAll('.js-like'))
         // const nodeList_nolikes = Array.from(document.querySelectorAll('.js-no-like'))
         // const nodeList_actionslike = Array.from(document.querySelectorAll('.js-action-like'))
         
-        for(const colorproduct of colorproducts)
+        // for(const colorproduct of colorproducts)
         setInterval(()=>{
-            colorproduct.classList.toggle('green')
-        },1000)
+            icon.classList.toggle('green')
+            setInterval(()=>{
+            icon.classList.toggle('red')
+            setInterval(()=>{
+            icon.classList.toggle('yellow')
+        },700)
+        },700)
+        },700)
+     
 
         likes.forEach(function(btn,i){likes
             btn.addEventListener('click',function(e){

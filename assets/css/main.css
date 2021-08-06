@@ -5,7 +5,8 @@
 
 .header {
     height: var(--header-height);
-    background-image: linear-gradient(to left top,#32b47c,#02b18e,#029fb8,#02b18e,#32b47c);
+    /* background-image: linear-gradient(to left top,#32b47c,#02b18e,#029fb8,#02b18e,#32b47c); */
+    background-color: #32b47c;
 }
 
 .header__navbar-list{
@@ -1403,5 +1404,12 @@ i.home-product-item__action-like-icon-fill{
 }
 
 .green{
-    color : var(--primary-color)
+    color : orange
+}
+
+.red{
+    color: red;
+}
+.yellow{
+    color: yellowgreen;
 }
