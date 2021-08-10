@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/Img_1.png');
+    background-size: cover;
+    background-position: center;
+    overflow:hidden;
+    /* overflow-y: hidden; */
+}
+.header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    /* justify-content:space-around; */
+    padding: 10px 100px;
+}
+.header__logo{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-list{
+    margin-left: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.nav-list li{
+    list-style: none;
+    margin-left: 20px;
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 20px;
+}
+.nav-list li:hover{
+    color: #2b1055;
+    background-color: white;
+    cursor: pointer;
+}
+.surface{
+    height: 28vh;
+    width: 1500%;
+    background: url(../img/Img_02.png);
+    background-repeat:repeat-x;
+    display: block;
+    position: absolute;
+    bottom: -4%;
+    left: 0%;
+    animation: moveRight 6s linear infinite;
+}
+.car{
+    height: 23.7vh;
+    width: 100%;
+    position: absolute;
+    bottom: -2%;
+    left: 21%;
+    animation: moveCar 1s linear infinite;
+}
+.car img{
+    /* width: 220px; */
+}
+
+
+@keyframes moveRight{
+    100%{
+        transform:translateX(-2950px);
+    }
+}
+
+@keyframes moveCar{
+    100%{
+        transform: translateY(-1px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    0%{
+        transform: translateY(-1px);
+    }
+}
+
+
+.container-2{
+    height: 500px;
+    width: 100%;
+}
+

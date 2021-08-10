@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container custom-scrollbar">
+        <div class="header">
+            <a href="" class="header__logo">Drive</a>          
+            <ul class="nav-list">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">About</li>
+                <li class="nav-item">Book</li>
+                <li class="nav-item">Contract</li>
+            </ul>
+            
+        </div>
+        <div class="night">
+            <div class="surface"></div>
+            <div class="car">
+                <img src="./assets/img/Img_06.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container-2">
+        
+    </div>
+
+
+    <script>
+        var surface = document.querySelector('.surface')
+        var car = document.querySelector('.car')
+        var carlight = document.querySelector('.car img')
+
+        // document.addEventListener('keypress',function(e){
+        //     if(e.which == 13){
+        //         surface.classList.toggle('moveRight')
+        //         car.classList.toggle('moveCar')
+        //     }
+        // })
+        let light = true
+        document.addEventListener('keypress',function(e){
+            if(e.which == 13){
+                if(light){
+                    light=false
+                    carlight.setAttribute('src','./assets/img/Img_05.png')
+                }else{
+                    light=true
+                    carlight.setAttribute('src','./assets/img/Img_06.png')
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
