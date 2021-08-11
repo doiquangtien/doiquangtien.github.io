@@ -111,6 +111,7 @@
   
   .progress {
     width: 100%;
+    overflow: hidden;
     -webkit-appearance: none;
     height: 6px;
     background: #d3d3d3;
@@ -119,14 +120,17 @@
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
   }
-  
+  .progress:hover::-webkit-slider-thumb {
+    background: var(--primary-color);
+    box-shadow: -500px 0 0 500px var(--primary-color);
+  }
   .progress::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
+    cursor: pointer;
     width: 12px;
     height: 6px;
-    background-color: var(--primary-color);
-    cursor: pointer;
+    background: var(--primary-color);
+    box-shadow: -500px 0 0 500px var(--primary-color);
   }
   
   /* PLAYLIST */
