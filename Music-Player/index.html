@@ -17,6 +17,15 @@
     <div class="player">
         <!-- Dashboard -->
         <div class="dashboard">
+          <div class="container-dark-mode">
+            <button 
+                class="light-mode-button" 
+                aria-label="Toggle Light Mode" 
+                onclick="toggle_light_mode()">
+                <span></span>
+                <span></span>
+            </button> 
+            </div>
           <!-- Header -->
           <header>
             <h4>Now playing:</h4>
@@ -351,11 +360,22 @@
                 this.loadCurrentSong()
                 //render play
                 this.render()
-                randombtn.classList.toggle('active', this.isRamdom)
-                repeatbtn.classList.toggle('active', this.isRepeat)              
+                            
             }
         } 
         app.start()
     </script>
+     <script>
+      function toggle_light_mode() {
+          var app = document.getElementsByTagName("BODY")[0];
+          if (localStorage.lightMode == "dark") {
+          localStorage.lightMode = "light";
+          app.setAttribute("light-mode", "light");
+          } else {
+          localStorage.lightMode = "dark";
+          app.setAttribute("light-mode", "dark");
+          }		
+      }
+      </script>
 </body>
 </html>
