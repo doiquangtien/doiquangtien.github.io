@@ -215,12 +215,16 @@
   
     body[light-mode=dark] .dashboard{
       background-color: #141516;
+      color: #ced4e2;     
+    }
+    body[light-mode=dark] .player{
+      background-color: #595959;
       color: #ced4e2;
-      } 
-       body[light-mode=dark] .player{
-    background-color: #595959;
-    color: #ced4e2;
-  }
+    }
+    body[light-mode=dark] .song{
+      background-color: #141516;
+      color: #ced4e2;
+    }
   
     body[light-mode="dark"] .light-mode-button span:nth-child(1){
     background-color: #ced4e2;
