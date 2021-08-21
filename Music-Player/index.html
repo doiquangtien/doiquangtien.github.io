@@ -60,7 +60,12 @@
           </div>
       
           <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
-      
+          
+          <div class="timer">
+            <div class="current-time">0:0</div>
+            <div class="duration-time">3:48</div>
+          </div>
+
           <audio id="audio" src=""></audio>
         </div>
       
@@ -182,6 +187,29 @@
                 const cdWidth = cd.offsetWidth
                 
                 
+                audio1.addEventListener("timeupdate",function(e){
+                  const currentTime = e.target.currentTime
+                  let musicCurrentTime = document.querySelector('.current-time')
+                  let musicDurationTime = document.querySelector('.duration-time')
+                  audio1.addEventListener("loadeddata",function(){
+                      
+                      let audioDuration = audio1.duration
+                      let totalMin = Math.floor(audioDuration / 60)
+                      let totalSec = Math.floor(audioDuration % 60)
+                      if(totalSec < 10){
+                          totalSec = `0${totalSec}`
+                      }
+                      musicDurationTime.innerText = `${totalMin}:${totalSec}`
+                  })
+                  let currentMin = Math.floor(currentTime / 60)
+                  let currentSec = Math.floor(currentTime % 60)
+                  if(currentSec < 10){
+                      currentSec = `0${currentSec}`
+                  }
+                  musicCurrentTime.innerText = `${currentMin}:${currentSec}`
+              })
+        
+
                 //Xử lý CD quay / dừng
                 const cdthumbAnimation = cdThumb.animate([
                   {transform : 'rotate(360deg)'}
