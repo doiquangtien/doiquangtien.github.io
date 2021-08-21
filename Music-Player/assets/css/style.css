@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #ec1f55;
+    --primary-color: #38a7ff;
     --text-color: #333;
   }
   
@@ -38,8 +38,9 @@
   }
   
   .dashboard {
+    /* background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0); */
     padding: 16px 16px 14px;
-    background-color: #fff;
+    /* background-color: #fff; */
     position: fixed;
     top: 0;
     width: 100%;
@@ -73,52 +74,100 @@
   
   /* CD */
   .cd {
+    position: relative;
     display: flex;
     margin: auto;
     width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
   }
   
-  .cd-thumb {
+  .cd-color{
+    position: absolute;
     width: 100%;
     padding-top: 100%;
     border-radius: 50%;
+    background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
+    animation: animate 0.5s linear infinite;
+  }
+  @keyframes animate
+  {
+    0%
+    {
+      transform: rotate(0deg);
+    }
+    100%
+    {
+      transform: rotate(360deg);
+    }
+  }
+  .cd-thumb {
+    width: 90%;
+    padding-top: 90%;
+    border-radius: 50%;
     background-color: #333;
     background-size: cover;
+    background-position: center;
     margin: auto;
+    
   }
+  
   
   /* CONTROL */
   .control {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 18px 0 8px 0;
+    padding: 12px 0;
+    margin-top: 16px;
+    background-color:  #fbfbfb;
+    border:  2px solid #fff;
+    border-radius: 80px;
+    box-shadow: -10px -10px 15px #fff,
+                10px 10px 15px rgba(0, 0, 0, 0.1),
+                inset -5px -5px 15px #fff,
+                inset 5px 5px 15px rgba(0, 0, 0, 0.1);
+
   }
-  
+ 
   .control .btn {
-    color: #666;
-    padding: 18px;
-    font-size: 18px;
+    position: relative;
+    color: #666; 
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.1),
+                0 5px 10px rgba(0, 0, 0, 0.1),
+                0 10px 15px rgba(0, 0, 0, 0.1);         
+  }
+
+  .btn:active{
+    color: var(--primary-color);
+    box-shadow: inset -7px 5px rgba(0, 0, 0, 0.025),
+                inset 0 5px 10px rgba(0, 0, 0, 0.15);
   }
   
   .control .btn.active {
     color: var(--primary-color);
+    box-shadow: inset -7px 5px rgba(0, 0, 0, 0.025),
+    inset 0 5px 10px rgba(0, 0, 0, 0.15);
   }
   
   .control .btn-toggle-play {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    font-size: 24px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
+    font-size: 20px;
   }
   
   .progress {
+    margin-top: 16px;
     width: 100%;
     overflow: hidden;
     -webkit-appearance: none;
@@ -144,7 +193,7 @@
   
   /* PLAYLIST */
   .playlist {
-    margin-top: 404px;
+    margin-top: 420px;
     padding: 12px;
   }
   
@@ -160,7 +209,8 @@
   }
   
   .song.active {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color);  
+    /* background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0); */
   }
   
   .song:active {
@@ -221,9 +271,17 @@
       background-color: #595959;
       color: #ced4e2;
     }
-    body[light-mode=dark] .song{
+    body[light-mode=dark] .song:not(.active){
       background-color: #141516;
       color: #ced4e2;
+    }
+
+    body[light-mode=dark] .control{
+      background-color:  #000;
+      box-shadow: -10px -10px 15px #000,
+                10px 10px 15px rgba(0, 0, 0, 0.1),
+                inset -5px -5px 15px #000,
+                inset 5px 5px 15px rgba(0, 0, 0, 0.1);
     }
   
     body[light-mode="dark"] .light-mode-button span:nth-child(1){

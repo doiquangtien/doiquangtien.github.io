@@ -34,6 +34,7 @@
       
           <!-- CD -->
           <div class="cd">
+            <div class="cd-color"></div>
             <div class="cd-thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
             </div>
           </div>
@@ -209,12 +210,14 @@
                 audio.onplay = function(){
                   _this.isPlaying = true
                   player.classList.add('playing')
+                  playBtn.classList.add('active')
                   cdthumbAnimation.play()
                 }
                 // khi song bị pause
                 audio.onpause = function(){
                   _this.isPlaying = false 
                   player.classList.remove('playing')
+                  playBtn.classList.remove('active')
                   cdthumbAnimation.pause()
                 }
                 //khi tiến độ bài hát thay đổi
@@ -342,16 +345,14 @@
               do{
                 newIndex = Math.floor(Math.random() * this.songs.length)
               }while(this.newArray.includes(newIndex))
-              
-              console.log(newIndex)
-              console.log(this.newArray)
+                            
               this.currentIndex = newIndex
               this.loadCurrentSong()
             },
             //
             start: function(){
                 //Gán cấu hình từ config vào ứng dụng
-                this.loadConfig()
+                // this.loadConfig()
                 //định nghĩa các thuộc tính cho object
                 this.defineProperties()
                 // lắng nghe và xử lý sự kiện (DOM events)
