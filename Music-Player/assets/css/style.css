@@ -40,7 +40,7 @@
   .dashboard {
     /* background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0); */
     padding: 16px 16px 14px;
-    /* background-color: #fff; */
+    background-color: #fff;
     position: fixed;
     top: 0;
     width: 100%;
@@ -76,9 +76,9 @@
   .cd {
     position: relative;
     display: flex;
-    margin: auto;
+    margin: 24px auto;
     width: 200px;
-    height: 200px;
+    /* height: 200px; */
     justify-content: center;
     align-items: center;
   }
@@ -193,7 +193,7 @@
   
   /* PLAYLIST */
   .playlist {
-    margin-top: 420px;
+    margin-top: 440px;
     padding: 12px;
   }
   

@@ -180,6 +180,8 @@
 
                 const _this = this
                 const cdWidth = cd.offsetWidth
+                
+                
                 //Xử lý CD quay / dừng
                 const cdthumbAnimation = cdThumb.animate([
                   {transform : 'rotate(360deg)'}
@@ -192,10 +194,10 @@
                 // XỬ lý phóng to / thu nhỏ CD
                 document.onscroll = function(){
                     const scrollTop = window.scrollY || document.documentElement.scrollTop
-                    const newcdWidth = cdWidth - scrollTop
-
+                    const newcdWidth = cdWidth - scrollTop                    
                     cd.style.width = newcdWidth > 0 ? newcdWidth +'px' : 0
                     cd.style.opacity = newcdWidth / cdWidth
+                   
                 }
               
                 //xử lý khi click play
