@@ -65,7 +65,14 @@
             <div class="current-time">0:0</div>
             <div class="duration-time">3:48</div>
           </div>
-
+          <div class="audio-volumn">
+            <div class="volumn-number">40%</div>
+            <div class="icon-volumn active">            
+              <i class="fas fa-volume-up volumn-open"></i>
+              <i class="fas fa-volume-mute volumn-muted"></i>
+            </div>
+            <input id="volumn" class="volumn" type="range" value="40" step="1" min="0" max="100">
+          </div>
           <audio id="audio" src=""></audio>
         </div>
       
@@ -91,10 +98,14 @@
             const randombtn = $('.btn-random')
             const repeatbtn = $('.btn-repeat')
             const playlist =  $('.playlist')
-           
+            const volumn = $('#volumn')
+            const volumnNumber = $('.volumn-number')
+            const iconVolumn = $('.icon-volumn')
+
         const app ={
             newArray : [],
             currentIndex : 0,
+            isMuted : true,
             isPlaying : false,
             isRamdom : false,
             isRepeat : false,
@@ -185,8 +196,32 @@
 
                 const _this = this
                 const cdWidth = cd.offsetWidth
+                volumn.addEventListener('touchmove',function(e){
+                  audio1.volume = e.currentTarget.value / 100
+                  volumnNumber.innerText = e.currentTarget.value + "%"
+                })
+                volumn.addEventListener('change',function(e){
+                  audio1.volume = e.currentTarget.value / 100
+                  volumnNumber.innerText = e.currentTarget.value + "%"
+                })
+                volumn.addEventListener('mousemove',function(e){
+                  audio1.volume = e.currentTarget.value / 100
+                  volumnNumber.innerText = e.currentTarget.value + "%"
+                })
                 
-                
+                iconVolumn.addEventListener('click',function(){
+                 
+                  if(_this.isMuted){
+                    iconVolumn.classList.remove('active')
+                    _this.isMuted = false
+                    audio1.muted = true
+                  }else{
+                    _this.isMuted = true
+                    iconVolumn.classList.add('active')                   
+                    audio1.muted = false
+                  }
+                })
+
                 audio1.addEventListener("timeupdate",function(e){
                   const currentTime = e.target.currentTime
                   let musicCurrentTime = document.querySelector('.current-time')
