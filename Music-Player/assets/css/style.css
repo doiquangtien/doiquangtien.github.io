@@ -85,17 +85,17 @@
     align-items: center;
   }
   
-  /* .cd-color{
+  .cd-color{
     position: absolute;
     width: 100%;
     padding-top: 100%;
     border-radius: 50%;
     background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
     animation: animate 0.5s linear infinite;
-  } */
+  }
   .cd-thumb {
-    width: 100%;
-    padding-top: 100%;
+    width: 90%;
+    padding-top: 90%;
     border-radius: 50%;
     background-color: #333;
     background-size: cover;

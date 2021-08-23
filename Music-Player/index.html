@@ -101,7 +101,8 @@
             const volumn = $('#volumn')
             const volumnNumber = $('.volumn-number')
             const iconVolumn = $('.icon-volumn')
-
+            const widthScreen = screen.width
+          
         const app ={
             newArray : [],
             currentIndex : 0,
@@ -253,14 +254,16 @@
                   iterations : Infinity
                 })
                 cdthumbAnimation.pause()
-
-                // XỬ lý phóng to / thu nhỏ CD
-                document.onscroll = function(){
-                    const scrollTop = window.scrollY || document.documentElement.scrollTop
-                    const newcdWidth = cdWidth - scrollTop                    
-                    cd.style.width = newcdWidth > 0 ? newcdWidth +'px' : 0
-                    cd.style.opacity = newcdWidth / cdWidth
-                   
+                if(widthScreen > 740){
+                  
+                  // XỬ lý phóng to / thu nhỏ CD
+                  document.onscroll = function(){
+                      const scrollTop = window.scrollY || document.documentElement.scrollTop
+                      const newcdWidth = cdWidth - scrollTop                    
+                      cd.style.width = newcdWidth > 0 ? newcdWidth +'px' : 0
+                      cd.style.opacity = newcdWidth / cdWidth
+                     
+                  }
                 }
               
                 //xử lý khi click play
@@ -367,7 +370,7 @@
                 else {
                   $('.song.active').scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center',
+                    block: 'end',
                   });
                 }
               },300)
